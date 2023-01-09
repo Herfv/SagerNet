@@ -1,0 +1,67 @@
+name: Sync Fork
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '9 4 * * *'
+
+jobs:
+  sync:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: tgymnich/fork-sync@v1.2.1
+        with:
+          github_token: ${{ secrets.ENYHQJYMGJ_TOKEN }}
+          owner: SagerNet
+          base: dev
+          head: dev
+
+  sync2:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: tgymnich/fork-sync@v1.2.1
+        with:
+          github_token: ${{ secrets.ENYHQJYMGJ_TOKEN }}
+          owner: SagerNet
+          base: i10n
+          head: i10n
+
+  sync3:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: tgymnich/fork-sync@v1.2.1
+        with:
+          github_token: ${{ secrets.ENYHQJYMGJ_TOKEN }}
+          owner: SagerNet
+          base: main
+          head: main
+
+  sync4:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: tgymnich/fork-sync@v1.2.1
+        with:
+          github_token: ${{ secrets.ENYHQJYMGJ_TOKEN }}
+          owner: SagerNet
+          base: v5
+          head: v5
+
+  sync5:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: tgymnich/fork-sync@v1.2.1
+        with:
+          github_token: ${{ secrets.ENYHQJYMGJ_TOKEN }}
+          owner: SagerNet
+          base: wip-openvpn
+          head: wip-openvpn
